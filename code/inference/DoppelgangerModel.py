@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import json
 
-class SimilarModel(object):
+class DoppelgangerModel(object):
     def __init__(self):
         print("\n** LOADING MODEL from pairwise_top_25_per_member_id.json **")
         with open('pairwise_top_25_per_member_id.json') as fp:
@@ -21,5 +21,5 @@ class SimilarModel(object):
         return similar_image_arr
 
 if __name__== "__main__":
-    model = SimilarModel()
+    model = DoppelgangerModel()
     print(model.predict([0], ['member_id']))
