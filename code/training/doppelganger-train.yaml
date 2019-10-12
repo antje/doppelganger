@@ -11,7 +11,7 @@ spec:
   restartPolicy: OnFailure
   containers:
   - name: doppelganger-train
-    image: tensorflow/tensorflow:1.13.1
+    image: antjebarth/doppelganger-train:1.0.0 
     command:
       - "python"
       - "doppelganger-train.py"
