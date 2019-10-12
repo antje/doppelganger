@@ -6,19 +6,19 @@ metadata:
     app: doppelganger-train
     type: training
     framework: tensorflow
-  namespace: doppelganger
 spec:
   restartPolicy: OnFailure
   containers:
   - name: doppelganger-train
     image: antjebarth/doppelganger-train:1.0.0 
+    imagePullPolicy: Always
     command:
       - "python"
       - "doppelganger-train.py"
       - "--model_export_path"
-      - "s3://antje-doppelganger-data/trained_model/tf_saved_model"
+      - "s3://antje-doppelganger-data/model/tf_saved_model"
       - "--model_summary_path"
-      - "s3://antje-doppelganger-data/trained_model/tf_summary"
+      - "s3://antje-doppelganger-data/model/tf_summary"
       - "--epochs"
       - "40"
     env:
