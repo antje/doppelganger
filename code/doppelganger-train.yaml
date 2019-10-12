@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: doppelganger-train
+  labels:
+    app: doppelganger-train
+    type: training
+    framework: tensorflow
+  namespace: doppelganger
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: doppelganger-train
+    image: tensorflow/tensorflow:1.13.1
+    command:
+      - "python"
+      - "doppelganger-train.py"
+      - "--model_export_path"
+      - "s3://antje-doppelganger-data/trained_model/tf_saved_model"
+      - "--model_summary_path"
+      - "s3://antje-doppelganger-data/trained_model/tf_summary"
+      - "--epochs"
+      - "40"
+    env:
+      - name: AWS_REGION
+        value: $AWS_REGION
