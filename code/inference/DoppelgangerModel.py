@@ -5,10 +5,10 @@ import json
 
 class DoppelgangerModel(object):
     def __init__(self):
-        print("\n** LOADING MODEL from pairwise_top_25_per_member_id.json **")
-        with open('pairwise_top_25_per_member_id.json') as fp:
+        print("\n** LOADING MODEL from pairwise_top_25.json **")
+        with open('pairwise_top_25.json') as fp:
             self.model = json.load(fp) 
-        print("\n** LOADED MODEL from pairwise_top_25_per_member_id.json **")
+        print("\n** LOADED MODEL from pairwise_top_25.json **")
 
     def predict(self, X, feature_names, **kwargs):
         convert_image_to_width = 224
