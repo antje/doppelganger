@@ -11,8 +11,8 @@ class DoppelgangerModel(object):
         print("\n** LOADED MODEL from pairwise_top_25.json **")
 
     def predict(self, X, feature_names, **kwargs):
-        convert_image_to_width = 224
-        convert_image_to_height = 224
+        convert_image_to_width = 299
+        convert_image_to_height = 299
 
 # TODO:  Change this logic to retrieve the 25 similar images accordingly
 
