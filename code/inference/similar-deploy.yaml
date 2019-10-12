@@ -28,7 +28,7 @@ spec:
             value: similar-model 
           - name: SELDON_DEPLOYMENT_ID
             value: similar-model
-          image: pipelineai/predict-similar:2.0.0
+          image: pipelineai/doppelganger-similar:2.0.0
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
