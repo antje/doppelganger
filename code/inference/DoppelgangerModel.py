@@ -16,8 +16,8 @@ class DoppelgangerModel(object):
 
 # TODO:  Change this logic to retrieve the 25 similar images accordingly
 
-        profile_pic = './images/%s_0.png' % str(X[0])
-        similar_image_arr = self.model[str(X[0])]
+        profile_pic = './images/%s_0.png' % str(int(X[0]))
+        similar_image_arr = self.model[str(int(X[0]))]
         return similar_image_arr
 
 if __name__== "__main__":
