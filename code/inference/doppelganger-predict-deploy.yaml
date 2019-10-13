@@ -24,7 +24,7 @@ spec:
           - name: PREDICTIVE_UNIT_SERVICE_PORT
             value: "5000"
           - name: PREDICTIVE_UNIT_ID
-            value: classifier
+            value: recommender
           - name: PREDICTOR_ID
             value: doppelganger-model 
           - name: SELDON_DEPLOYMENT_ID
@@ -46,7 +46,7 @@ spec:
             tcpSocket:
               port: http
             timeoutSeconds: 1
-          name: classifier 
+          name: recommender 
           ports:
           - containerPort: 5000
             name: http
@@ -88,7 +88,7 @@ spec:
         service_port: 5000
         type: REST
       implementation: UNKNOWN_IMPLEMENTATION
-      name: classifier
+      name: recommender
       type: MODEL
     labels:
       fluentd: "true"
