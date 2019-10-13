@@ -1,4 +1,4 @@
-apiVersion: machinelearning.seldon.io/v1alpha3
+apiVersion: machinelearning.seldon.io/v1alpha2
 kind: SeldonDeployment
 metadata:
   generation: 1
@@ -12,7 +12,7 @@ spec:
     seldon.io/engine-log-requests: "false"
     seldon.io/engine-log-responses: "false"
     seldon.io/headless-svc: "false"
-  name: similar-model
+  name: doppelganger-model
   predictors:
   - componentSpecs:
     - spec:
