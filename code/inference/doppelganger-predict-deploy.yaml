@@ -5,6 +5,7 @@ metadata:
   labels:
     app: seldon
   name: doppelganger-model
+  namespace: deployment
 spec:
   annotations:
     seldon.io/engine-log-message-type: seldon.message.pair
