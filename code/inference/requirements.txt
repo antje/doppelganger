@@ -5,4 +5,4 @@ numpy
 pandas
 pillow
 flask
-seldon-core==0.3.1
+seldon-core==0.4.1
