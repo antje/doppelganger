@@ -16,7 +16,7 @@ spec:
           - name: PREDICTIVE_UNIT_SERVICE_PORT
             value: "9000"
           - name: PREDICTIVE_UNIT_ID
-            value: recommender-1
+            value: classifier-1
           - name: PREDICTOR_ID
             value: abtest
           - name: SELDON_DEPLOYMENT_ID
@@ -38,7 +38,7 @@ spec:
             tcpSocket:
               port: http
             timeoutSeconds: 1
-          name: recommender-1
+          name: classifier-1
           ports:
           - containerPort: 9000
             name: http
@@ -82,7 +82,7 @@ spec:
           - name: PREDICTIVE_UNIT_SERVICE_PORT
             value: "9000"
           - name: PREDICTIVE_UNIT_ID
-            value: recommender-2
+            value: classifier-2
           - name: PREDICTOR_ID
             value: abtest
           - name: SELDON_DEPLOYMENT_ID
@@ -104,7 +104,7 @@ spec:
             tcpSocket:
               port: http
             timeoutSeconds: 1
-          name: recommender-2
+          name: classifier-2
           ports:
           - containerPort: 9000
             name: http
@@ -147,16 +147,15 @@ spec:
           service_port: 9000
           type: REST
         implementation: UNKNOWN_IMPLEMENTATION
-        name: recommender-1
+        name: classifier-1
         type: MODEL
       - children: []
         endpoint:
-                #          service_host: abtest-model-abtest-recommender-2-pipelineai-mean-recommender-2-0-0.kubeflow.svc.cluster.local.
           service_host: localhost
           service_port: 9000
           type: REST
         implementation: UNKNOWN_IMPLEMENTATION
-        name: recommender-2
+        name: classifier-2
         type: MODEL
       endpoint: {}
       implementation: RANDOM_ABTEST
