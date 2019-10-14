@@ -15,12 +15,6 @@ spec:
     command:
       - "python"
       - "doppelganger-train.py"
-#      - "--model_export_path"
-#      - "s3://antje-doppelganger-data/model/tf_saved_model"
-#      - "--model_summary_path"
-#      - "s3://antje-doppelganger-data/model/tf_summary"
-#      - "--epochs"
-#      - "40"
     env:
       - name: AWS_REGION
         value: eu-central-1
