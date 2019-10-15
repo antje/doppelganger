@@ -29,7 +29,6 @@ image_generator = datagen.flow_from_directory(
             class_mode=None,
             shuffle=False)
 # Note:  This needs to stay up here because we use it later to resolve the image name
-#        We need to refactor to avoid this dependency on the image name == image idx (not good)
 images = image_generator.next()
 print('** LOADED IMAGES **')
 
@@ -63,7 +62,6 @@ def train(num_result_images=25):
     bottleneck_pairwise_dist = dist.pairwise(bottlenecks)
 
     # Find the top 100 similar images per image
-    # TODO:  Convert this to a dict (key = image_name, value = list of top 100 similar images
     retrieved_images = []
     for image_idx in range(0, len(bottleneck_pairwise_dist)):
         retrieved_indexes = pd.Series(bottleneck_pairwise_dist[image_idx]).sort_values().head(num_result_images).index.tolist()
